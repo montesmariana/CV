@@ -1,0 +1,108 @@
+---
+name: Mariana
+surname: Montes
+position: "PhD Student"
+address: "Erasmushuis, Faculty of Arts, KU Leuven"
+profilepic: avatar.jpg
+www: marianamontes.netlify.app
+email: "montesmariana@gmail.com"
+twitter: roblerobusto
+github: marianamontes
+linkedin: mariana-montes-a373637b
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "PhD student of Linguistics interested in Cognitive and Corpus linguistics and Data visualization"
+output:
+  vitae::moderncv:
+    latex_engine: xelatex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Some stuff about me
+
+ * I was born and raised in Argentina
+ * I like languages and linguistics
+ * I like learning new skills
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Lincenciatura in Italian Language and Literature", "2011-16", "Universidad Nacional de Córdoba", "Córdoba, Argentina",
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Teaching experience
+
+```{r}
+tribble(
+  ~Year, ~Course, ~University, ~Where, ~Program,
+  "Sep-Dec 2020", "Lexical Semantics and Lexicology (Collaborator)", "KU Leuven", "Leuven, Belgium", "Advanced Master in Linguistics",
+  "Jan 2020", "Distributiona Semantics (Collaborator)", "Tilburg University", "Tilburg, Netherlands", "Winter LOT School",
+  "Sep-Dec 2019", "Lexicology and Morphology (Collaborator)", "KU Leuven", "Leuven, Belgium", "Master in Linguistics",
+  "Sep-Dec 2018", "Lexicology and Morphology (Collaborator)", "KU Leuven", "Leuven, Belgium", "Master in Linguistics",
+  "Mar 2016-Oct 2017", "Linguistics I (TA)", "Universidad Nacional de Córdoba", "Córdoba, Argentina","Degree in Italian Language and Literature (Licenciatura, Profesorado, Traductorado)"
+) %>%
+  detailed_entries(
+    what = Course, when = Year, with = University, where = Where, why = Program
+  )
+```
+
+# Publications
+
+```{r}
+library(tidyverse)
+# knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+win2utf <- function(string) {
+  if (is.null(string) | inherits(string, "csl_dates")) return(string)
+  if (is.character(string)) {
+    mapping <- list(
+      c("Ã©", "é"),
+      c("Ã³", "ó"),
+      c("Ã¡", "á"),
+      c("Ã¼", "ü"),
+      c("Ã­", "í"),
+      c("Ã", "Á"),
+      c("Ãº", "ú"),
+      c("Ã±", "ñ"),
+      c("â€™", "'"),
+      c("â€“", '"'),
+      c("í¶", "ö")
+    )
+    for (mapper in mapping){
+      string <- gsub(mapper[[1]], mapper[[2]], string)
+    }
+  } else if (is.list(string)) {
+    iscsllist <- inherits(string, "list_of_csl_names")
+    baselist <- map(string, function(string_element) {
+      if (inherits(string_element, "csl_name")) {
+        for (cname in names(string_element)) {
+          string_element[[cname]] <- win2utf(string_element[[cname]])
+        }
+        return(string_element)
+      } else {
+        return(win2utf(string_element))
+      }
+    })
+    if (iscsllist) {
+      string <- list_of_csl_names(baselist)
+    } else {
+        string <- baselist
+      }
+  }
+  return(string)
+}
+
+bibliography_entries("publications_recoded.bib") %>%
+  mutate(across(everything(), win2utf)) %>% 
+   mutate(leading = author$family) %>%
+  mutate(leading = if_else(nchar(leading) == 0, editor$family, leading)) %>% 
+  arrange(leading, issued)
+```
+
