@@ -1,0 +1,111 @@
+
+@incollection{perezMetaforasCorporizacionCaso2016,
+	address = {Córdoba},
+	title = {Metáforas y corporización: el caso del calor},
+	isbn = {978-987-602-328-3},
+	language = {español},
+	booktitle = {Andar entre metáforas},
+	publisher = {Comunicarte},
+	author = {Pérez, Elena del Carmen and Montes, Mariana},
+	editor = {Pérez, Elena del Carmen and Bortolon, Mariela},
+	year = {2016},
+	pages = {122--152}
+}
+
+@incollection{perezMetaforasCorporizacionCaso2016a,
+	address = {Córdoba},
+	title = {Metáforas y corporización: el caso del frío},
+	isbn = {978-987-602-328-3},
+	language = {español},
+	booktitle = {Andar entre metáforas},
+	publisher = {Comunicarte},
+	author = {Pérez, Elena del Carmen and Montes, Mariana},
+	editor = {Pérez, Elena del Carmen and Bortolon, Mariela},
+	year = {2016},
+	pages = {102--121}
+}
+
+@book{ruedadetwentymanMetaforasCognicionTexto2016,
+	address = {Córdoba},
+	title = {Metáforas, de la cognición al texto},
+	isbn = {978-987-602-329-0},
+	language = {español},
+	publisher = {Comunicarte},
+	editor = {Rueda de Twentyman, Nelly and Montes, Mariana},
+	year = {2016}
+}
+
+@incollection{perezCalentarMercadoEnfriar2016,
+	address = {Santa Fe},
+	title = {Calentar el mercado y enfriar la economía: usos metafóricos de la temperatura},
+	booktitle = {Estudios en lingüística cognitiva},
+	publisher = {Universidad Nacional del Litoral},
+	author = {Pérez, Elena del Carmen and Montes, Mariana},
+	editor = {Luciani, María de las Mercedes},
+	year = {2016},
+	pages = {169--182}
+}
+
+@incollection{blunnoFronterasGeograficasQue2016,
+	address = {Córdoba},
+	edition = {1},
+	title = {Fronteras geográficas que invierten identidades. {La} relación entre {Aberdeen} y {Mondragone} en "{Gomorra}" (2006)},
+	copyright = {Licencia Creative Commons Atribución – No Comercial – Sin Obra Derivada 4.0 Internacional},
+	isbn = {978-950-33-1320-6},
+	language = {español},
+	booktitle = {Actas del {I} {Congreso} {Internacional} de {Lenguas}, {Migraciones}, {Cultura}: confluencias y divergencias de lo vernáculo y lo foráneo o de lo nativo y lo extranjero},
+	publisher = {Universidad Nacional de Córdoba},
+	author = {Blunno, Sofía and Montes, Mariana},
+	editor = {Castro, Adriana and Agüero, Gustavo and Raffo, Carlos and González de Gatti, María Marcela and Romano, María Elisa},
+	year = {2016},
+	pages = {239--246}
+}
+
+@inproceedings{montesCuerpoAmbienteLenguaje2017,
+	address = {Córdoba},
+	title = {El cuerpo y el ambiente en el lenguaje de las emociones},
+	volume = {I},
+	isbn = {978-987-42-3351-6},
+	url = {https://rdu.unc.edu.ar/handle/11086/4588},
+	abstract = {La presente comunicación se inscribe dentro del proyecto de investigación “La metáfora: de la cognición al texto” (2014-2015) y constituye un avance del Trabajo Final de la Licenciatura en Lengua y Literatura Italianas de quien suscribe, bajo la dirección de la Mgtr. Mariela Bortolon. A partir de la teoría de la metáfora conceptual (Lakoff \& Johnson, 1980) y desarrollos posteriores (Lakoff \& Johnson, 1999; Kövecses, 2002, 2008; Yu, 2008) se estudiará el uso metafórico de términos del dominio fuente TEMPERATURA en el Corpus di Riferimento dell'Italiano Scritto (Corpus de referencia del italiano escrito, compilado por la Universidad de Boloña). En este marco, consideramos clave la noción de corporización (embodiment), entendida como el rol de la fisiología del cuerpo y del contexto biológico y cultural en la conceptualización de la experiencia (Koptjevskaja-Tamm \& Rakhilina, 2006; Rohrer, 2007; Yu, 2008). Desde los supuestos de la lingüística cognitiva, según la cual el lenguaje hace uso de otros mecanismos cognitivos (como la percepción y la categorización), el estudio de las expresiones lingüísticas metafóricas nos permitiría comprender cómo nuestra experiencia con la temperatura participa en la construcción de conceptos acerca de las emociones (desde el afecto a la exaltación), la actividad o el conflicto.},
+	language = {español},
+	booktitle = {Los discursos sobre la ecología y el medioambiente en sus intersticios lingüísticos, semióticos y educativos},
+	publisher = {Universidad Nacional de Córdoba},
+	author = {Montes, Mariana},
+	editor = {Tapia Kwiecien, Martín and Ávalos, Ana},
+	year = {2017},
+	pages = {154--161}
+}
+
+@inproceedings{perezAltasTemperaturasAfecto2013,
+	address = {Córdoba},
+	title = {Altas temperaturas: afecto y conflicto. {Del} medioambiente a las relaciones humanas},
+	url = {https://rdu.unc.edu.ar/bitstream/handle/11086/1780/Perez%2c%20Elena%20y%20Montes%2c%20Mariana%20Altas%20temperaturasAfecto.pdf?sequence=38&isAllowed=y},
+	booktitle = {{III} {Jornadas} internacionales sobre medio ambiente y lenguajes: ecolenguas {III} : [ponencias y conferencias]},
+	author = {Pérez, Elena del Carmen and Montes, Mariana},
+	editor = {Parfeniuk, Aldo and Dalmagro, María Cristina},
+	year = {2013}
+}
+
+@phdthesis{montesUsoMetaforicoTemperatura2016,
+	address = {Córdoba},
+	type = {Trabajo final monográfico de licenciatura},
+	title = {Uso metaforico della temperatura nell'italiano scritto contemporaneo},
+	language = {it},
+	school = {Universidad Nacional de Córdoba},
+	author = {Montes, Mariana},
+	collaborator = {Bortolon, Mariela},
+	year = {2016}
+}
+
+@article{montesEvaluacionTemperaturaItaliano2017,
+	title = {Evaluación de la temperatura en el italiano escrito contemporáneo},
+	volume = {4},
+	issn = {1853-6085},
+	url = {http://editorial.fl.unc.edu.ar/encuentros/},
+	journal = {Encuentros},
+	author = {Montes, Mariana},
+	month = jun,
+	year = {2017},
+	pages = {9--19}
+}

@@ -1,14 +1,12 @@
 ---
 name: Mariana
 surname: Montes
-position: "PhD Student"
+# position: "PhD Student, Linguistics"
 address: "Erasmushuis, Faculty of Arts, KU Leuven"
 profilepic: avatar.jpg
-www: marianamontes.netlify.app
-email: "montesmariana@gmail.com"
-twitter: roblerobusto
+www: www.marianamontes.me
+email: "mariana.montes@kuleuven.be"
 github: marianamontes
-linkedin: mariana-montes-a373637b
 date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "PhD student of Linguistics interested in Cognitive and Corpus linguistics and Data visualization"
 output:
@@ -33,7 +31,7 @@ library(vitae)
 library(tibble)
 tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where, ~Why,
-   "PhD in Linguistics", "2017-", "KU Leuven", "Leuven, Belgium", "Ongoing",
+   "PhD in Linguistics", "2017-", "KU Leuven", "Leuven, Belgium", "Ongoing -- to defend in 21/Sep/2021",
   "Lincenciatura in Italian Language and Literature", "2011-16", "Universidad Nacional de Córdoba", "Córdoba, Argentina", "Cumulative GPA: 9.25/10"
 ) %>% 
   detailed_entries(Degree, Year, Institution, Where, Why)
@@ -44,11 +42,11 @@ tribble(
 ```{r}
 tribble(
   ~Year, ~Course, ~University, ~Where, ~Program,
-  "Sep-Dec 2020", "Lexical Semantics and Lexicology (Collaborator)", "KU Leuven", "Leuven, Belgium", "Advanced Master in Linguistics",
-  "Jan 2020", "Distributional Semantics (Collaborator)", "Tilburg University", "Tilburg, Netherlands", "Winter LOT School",
-  "Sep-Dec 2019", "Lexicology and Morphology (Collaborator)", "KU Leuven", "Leuven, Belgium", "Master in Linguistics",
-  "Sep-Dec 2018", "Lexicology and Morphology (Collaborator)", "KU Leuven", "Leuven, Belgium", "Master in Linguistics",
-  "Mar 2016-Oct 2017", "Linguistics I (TA)", "Universidad Nacional de Córdoba", "Córdoba, Argentina","Degree in Italian Language and Literature (Licenciatura, Profesorado, Traductorado)"
+  "Sep-Dec 2020", "Lexical Semantics and Lexicology (Collaborator, with Dirk Geeraerts)", "KU Leuven", "Leuven, Belgium", "Advanced Master in Linguistics",
+  "Jan 2020", "Distributional Semantics (Collaborator, with Dirk Geeraerts)", "Tilburg University", "Tilburg, Netherlands", "Winter LOT School",
+  "Sep-Dec 2019", "Lexicology and Morphology (Collaborator, with Dirk Geeraerts)", "KU Leuven", "Leuven, Belgium", "Master in Linguistics",
+  "Sep-Dec 2018", "Lexicology and Morphology (Collaborator, with Kris Heylen)", "KU Leuven", "Leuven, Belgium", "Master in Linguistics",
+  "Mar 2016-Oct 2017", "Linguistics I (TA, with Silvana Marchiaro)", "Universidad Nacional de Córdoba", "Córdoba, Argentina","Degree in Italian Language and Literature (Licenciatura, Profesorado, Traductorado)"
 ) %>%
   detailed_entries(
     what = Course, when = Year, with = University, where = Where, why = Program
@@ -115,8 +113,8 @@ win2utf <- function(string) {
   return(string)
 }
 
-bibliography_entries("publications_recoded.bib") %>%
-  mutate(across(everything(), win2utf)) %>% 
+bibliography_entries("publications.bib") %>%
+  mutate(across(everything(), win2utf)) %>%
    mutate(leading = author$family) %>%
   mutate(leading = if_else(nchar(leading) == 0, editor$family, leading)) %>% 
   arrange(leading, issued)
