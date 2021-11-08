@@ -8,7 +8,7 @@ www: www.marianamontes.me
 email: "mariana.montes@kuleuven.be"
 github: marianamontes
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "PhD student of Linguistics interested in Cognitive and Corpus linguistics and Data visualization"
+aboutme: "Linguist interested in Cognitive and Corpus linguistics and Data visualization"
 output:
   vitae::moderncv:
     latex_engine: xelatex
@@ -31,8 +31,8 @@ library(vitae)
 library(tibble)
 tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where, ~Why,
-   "PhD in Linguistics", "2017-", "KU Leuven", "Leuven, Belgium", "Ongoing -- to defend in 21/Sep/2021",
-  "Lincenciatura in Italian Language and Literature", "2011-16", "Universidad Nacional de Córdoba", "Córdoba, Argentina", "Cumulative GPA: 9.25/10"
+   "PhD in Linguistics", "2017-2021", "KU Leuven", "Leuven, Belgium", "Defended: 21/Sep/2021",
+  "Lincenciatura in Italian Language and Literature", "2011-2016", "Universidad Nacional de Córdoba", "Córdoba, Argentina", "Cumulative GPA: 9.25/10"
 ) %>% 
   detailed_entries(Degree, Year, Institution, Where, Why)
 ```
@@ -42,6 +42,7 @@ tribble(
 ```{r}
 tribble(
   ~Year, ~Course, ~University, ~Where, ~Program,
+  "Sep-Dec 2021", "Lexical Semantics and Lexicology (Substitute)", "KU Leuven", "Leuven, Belgium", "Advanced Master in Linguistics",
   "Sep-Dec 2020", "Lexical Semantics and Lexicology (Collaborator, with Dirk Geeraerts)", "KU Leuven", "Leuven, Belgium", "Advanced Master in Linguistics",
   "Jan 2020", "Distributional Semantics (Collaborator, with Dirk Geeraerts)", "Tilburg University", "Tilburg, Netherlands", "Winter LOT School",
   "Sep-Dec 2019", "Lexicology and Morphology (Collaborator, with Dirk Geeraerts)", "KU Leuven", "Leuven, Belgium", "Master in Linguistics",
@@ -50,6 +51,19 @@ tribble(
 ) %>%
   detailed_entries(
     what = Course, when = Year, with = University, where = Where, why = Program
+  )
+```
+
+# Invited talks
+
+```{r}
+tribble(
+  ~Year, ~Title, ~University, ~Where, ~Event,
+  "6 Nov 2021", "Métodos distribucionales y visualización aplicados a la semántica lexica (Distributional methods and visualization applied to lexical semantics)", "Grupo de Estadística para el Estudio del Lenguaje, Universidad de Buenos Aires", "Online", "Ciclo de charlas sobre Herramientas y métodos para el análisis cuantitativo del lenguaje",
+  "1 Oct 2021", "Nephological Semantics (with Karlien Franco)", "Universidad del Salvador", "Buenos Aires, Argentina (and via YouTube)", "II Jornadas de Lingüística y Gramática Española"
+) %>%
+  detailed_entries(
+    what = Title, when = Year, with = University, where = Where, why = Event
   )
 ```
 
@@ -73,50 +87,9 @@ tribble(
 ```{r}
 library(tidyverse)
 # knitr::write_bib(c("vitae", "tibble"), "packages.bib")
-win2utf <- function(string) {
-  if (is.null(string) | inherits(string, "csl_dates")) return(string)
-  if (is.character(string)) {
-    mapping <- list(
-      c("Ã©", "é"),
-      c("Ã³", "ó"),
-      c("Ã¡", "á"),
-      c("Ã¼", "ü"),
-      c("Ã­", "í"),
-      c("Ã", "Á"),
-      c("Ãº", "ú"),
-      c("Ã±", "ñ"),
-      c("â€™", "'"),
-      c("â€“", '"'),
-      c("í¶", "ö")
-    )
-    for (mapper in mapping){
-      string <- gsub(mapper[[1]], mapper[[2]], string)
-    }
-  } else if (is.list(string)) {
-    iscsllist <- inherits(string, "list_of_csl_names")
-    baselist <- map(string, function(string_element) {
-      if (inherits(string_element, "csl_name")) {
-        for (cname in names(string_element)) {
-          string_element[[cname]] <- win2utf(string_element[[cname]])
-        }
-        return(string_element)
-      } else {
-        return(win2utf(string_element))
-      }
-    })
-    if (iscsllist) {
-      string <- list_of_csl_names(baselist)
-    } else {
-        string <- baselist
-      }
-  }
-  return(string)
-}
 
 bibliography_entries("publications.bib") %>%
-  mutate(across(everything(), win2utf)) %>%
-   mutate(leading = author$family) %>%
-  mutate(leading = if_else(nchar(leading) == 0, editor$family, leading)) %>% 
+  mutate(leading = if_else(nchar(author$family) == 0, editor$family, author$family)) %>% 
   arrange(leading, issued)
 ```
 
