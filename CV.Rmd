@@ -12,6 +12,7 @@ aboutme: "Linguist interested in Cognitive and Corpus linguistics and Data visua
 output:
   vitae::moderncv:
     latex_engine: xelatex
+skills: "R,5"
 ---
 
 ```{r setup, include=FALSE}
@@ -23,7 +24,7 @@ library(vitae)
 
  * I was born and raised in Argentina
  * I like languages and linguistics
- * I like learning new skills
+ * I like empirical methods and visual analytics
 
 # Education
 
@@ -79,6 +80,22 @@ tribble(
   brief_entries(what = What, when = Year, with = With)
 ```
 
+# Languages
+
+- Spanish (native)
+- English (advanced)
+- Italian (advanced)
+- Dutch (intermediate-advanced)
+- Japanese (intermediate)
+- French (basic)
+
+# Skills
+
+- R (advanced)
+
+- Python (intermediate)
+
+- Javascript (intermediate, mostly D3)
 
 # Publications
 
@@ -86,7 +103,6 @@ tribble(
 
 ```{r}
 library(tidyverse)
-# knitr::write_bib(c("vitae", "tibble"), "packages.bib")
 
 bibliography_entries("publications.bib") %>%
   mutate(leading = if_else(nchar(author$family) == 0, editor$family, author$family)) %>% 
