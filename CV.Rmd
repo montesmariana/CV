@@ -92,9 +92,7 @@ tribble(
 # Skills
 
 - R (advanced)
-
 - Python (intermediate)
-
 - Javascript (intermediate, mostly D3)
 
 # Publications
@@ -106,6 +104,8 @@ library(tidyverse)
 
 bibliography_entries("publications.bib") %>%
   mutate(leading = if_else(nchar(author$family) == 0, editor$family, author$family)) %>% 
+  filter(leading != "Blunno, Montes") %>% 
   arrange(leading, issued)
+    
 ```
 
